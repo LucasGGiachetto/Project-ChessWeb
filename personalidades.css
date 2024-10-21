@@ -7,19 +7,16 @@ body {
 }
 
 header {
-    background-color: #333;
-    color: #fff;
-    padding: 1rem 0;
-    text-align: center;
+    background: #A0522D;
+    color: white;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+    justify-content: space-between;
 }
 
-nav {
-    /* Estilo da navegação */
-}
-
-h1 {
-    margin: 0;
-}
+/* Estilos adicionais para nav, h1, etc. */
 
 main {
     padding: 20px;
@@ -35,11 +32,13 @@ main {
 }
 
 .content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     opacity: 0;
     transform: translateY(20px);
     animation: fadeInUp 1s forwards;
     padding: 15px;
-    text-align: center;
 }
 
 .content img {
@@ -47,11 +46,15 @@ main {
     height: auto;
     border-radius: 4px;
     margin-bottom: 15px;
+    /* Adicionando margem à direita para telas maiores */
+    margin-right: 20px; 
 }
 
 .content p {
     font-size: 0.9rem;
     color: #666;
+    /* Adicionando margem à esquerda para garantir espaço entre texto e imagem */
+    margin-left: 20px; 
 }
 
 @keyframes fadeInUp {
@@ -61,12 +64,49 @@ main {
     }
 }
 
+/* Consulta de mídia para ajustar o layout em telas menores */
+@media (max-width: 768px) {
+    .content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .content img {
+        /* Removendo a margem lateral em telas menores para melhorar a responsividade */
+        margin-right: 0;
+        margin-bottom: 15px; /* Mantém espaço entre a imagem e o texto */
+    }
+
+    .content p {
+        /* Removendo a margem lateral em telas menores */
+        margin-left: 0;
+    }
+}
+
+img {
+    max-width: 120px;
+    height: auto;
+    margin-right: 20px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    padding: 0 10px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+}
+
 footer {
-    background-color: #333;
-    color: #fff;
+    background: #A0522D;
+    color: white;
     text-align: center;
-    padding: 1rem 0;
-    position: absolute;
-    bottom: 0;
-    width: 100%;
+    padding: 10px 0;
+    box-shadow: 0px -2px 5px rgba(0, 0, 0, 0.5);
 }
